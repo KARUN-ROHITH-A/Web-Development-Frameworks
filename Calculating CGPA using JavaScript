@@ -1,0 +1,49 @@
+<script>
+
+// Javascript program to calculate the CGPA
+// and CGPA percentage of a student
+
+function CgpaCalc( marks, n)
+{
+	
+	// Variable to store the grades in
+	// every subject
+	let grade = Array.from({length: n}, (_, i) => 0);
+
+	// Variables to store CGPA and the
+	// sum of all the grades
+	let cgpa, sum = 0;
+
+	// Computing the grades
+	for(let i = 0; i < n; i++)
+	{
+		grade[i] = (marks[i] / 10);
+	}
+
+	// Computing the sum of grades
+	for(let i = 0; i < n; i++)
+	{
+		sum += grade[i];
+	}
+
+	// Computing the CGPA
+	cgpa = sum / n;
+
+	return cgpa;
+}
+
+// Driver Code
+	
+	let n = 5;
+		let marks
+			= [ 90, 80, 70, 80, 90 ];
+
+		let cgpa = CgpaCalc(marks, n);
+
+		document.write(
+			"CGPA = " + cgpa + "<br/>");
+		document.write(
+			"CGPA Percentage = " + (cgpa * 9.5).toFixed(2));
+
+	
+</script>
